@@ -1,0 +1,207 @@
+body {
+    text-align: center;
+    font-size: large;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-flow: column nowrap;
+    background-color: rgb(192, 151, 40);
+}
+
+h1 {
+    color: green;
+    font-weight: bold;
+    font-size: xx-large;
+}
+
+header {
+    background-color: rgb(166, 166, 166);
+    top: 0;
+    position: sticky;
+}
+
+footer {
+    background-color: rgb(166, 166, 166);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    padding: 20px;
+}
+
+footer img {
+    border-radius: 5px;
+}
+
+footer img:hover {
+    transform: scale(1.1);    
+}
+
+section {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+button {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    border: none;
+    border-radius: 7px;
+    background-color: rgb(166, 166, 166);
+}
+
+button div, button div::before, button div::after {
+    background-color: black;
+    width: 40px;
+    height: 5px;
+    border-radius: 5px;
+    position: absolute;
+}
+
+button div::before, button div::after {
+    content: "";
+}
+
+button div::before {
+    transform: translate(-20px, -12px);
+}
+
+button div::after {
+    transform: translate(-20px, 12px);
+}
+
+:is(header:hover, header:focus-within) nav {
+    display: block;
+}
+
+:is(header:hover, header:focus-within) button div {
+    background-color: transparent;
+}
+
+:is(header:hover, header:focus-within) button div::before {
+    transform: translateX(-12px) rotate(45deg);
+}
+
+:is(header:hover, header:focus-within) button div::after {
+    transform: translateX(-12px) rotate(-45deg);
+}
+
+nav {
+    display: none;
+    animation-name: showMenu;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes showMenu {
+    0% {
+        transform: scaleY(0);
+    }
+    50% {
+        transform: scaleY(1.2);
+    }
+    100% {
+        transform: scaleY(1);
+    }
+}
+
+nav ul {
+    flex-grow: 1;
+    list-style-type: none;
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+li {
+    border-top: 2px solid black;
+    padding: 5px;
+}
+
+li a {
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+    text-align: center;
+    width: 80%;
+}
+
+
+li a:hover, li a:focus {
+    /* transition-property: transform;
+    transition-duration: 0.3s; */
+    transform: scale(1.2);
+}
+
+main {
+    display: grid;
+    padding-left: 30px;
+    margin-top: 50px;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 10px;
+}
+
+main img {
+    border-radius: 5px;
+    margin-bottom: 50px;
+}
+
+main img:hover {
+    transform: scale(1.1);
+}
+
+
+/* #grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+}
+
+#grid-2 {
+    background-color: gold;
+    padding: 10px;
+    border: 2px solid red;
+    border-bottom: none;
+    border-radius: 2rem 2rem 0  0;
+}
+
+#grid-1 {
+    border: 2px solid red;
+    border-top: none;
+    border-radius: 0 0 2rem 2rem;
+}
+
+.box {
+    color: blue;
+    border-top: 1px solid black;
+    height: 35px;
+    background-color: lightblue;
+    padding: 1px;
+}
+
+#last {
+    border-radius: 0 0 2rem 2rem;
+}
+
+a {
+    display: block;
+    height: 35px;
+}
+
+a:hover {
+    background-color: blue;
+    color: whitesmoke;
+}
+
+#img1 {
+    grid-row: 1/4;
+    grid-column: 1/2;
+}
+
+#img2 {
+    grid-row: 1/4;
+    grid-column: 3/4;
+} */
